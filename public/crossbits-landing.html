@@ -100,13 +100,13 @@
       left: 0;
       right: 0;
       z-index: 100;
-      padding: 22px 52px;
+      padding: 16px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(3, 3, 12, 0.8);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, .05)
+      background: rgba(3, 3, 12, 0.45);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, .02)
     }
 
     .n-logo {
@@ -534,51 +534,36 @@
       flex-shrink: 0
     }
 
-    /* HORIZONTAL SCROLL */
-    #hs {
+    /* SECTIONS */
+    #features {
       position: relative;
       z-index: 2
     }
 
-    .hs-sticky {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      overflow: hidden
-    }
-
-    .hs-track {
-      display: flex;
-      height: 100%;
-      align-items: stretch;
-      will-change: transform
-    }
-
-    .panel {
-      height: 100%;
-      min-width: 100vw;
+    .v-panel {
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      overflow: hidden;
-      flex-shrink: 0
+      padding: 120px 0;
     }
 
     .pi {
       width: 100%;
-      max-width: 1200px;
-      padding: 0 80px;
+      max-width: 1000px;
+      padding: 0 40px;
       position: relative;
       z-index: 2
     }
 
     /* Panel 1 */
     .p1-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+      text-align: center;
     }
 
     .p1-tag {
@@ -620,7 +605,8 @@
       font-size: 15px;
       color: var(--m2);
       line-height: 1.8;
-      max-width: 420px
+      max-width: 520px;
+      margin: 0 auto;
     }
 
     /* Phone */
@@ -792,10 +778,11 @@
 
     /* Panel 2 */
     .p2-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+      text-align: center;
     }
 
     .p2-tag {
@@ -823,19 +810,26 @@
       font-size: 14px;
       color: var(--m2);
       line-height: 1.8;
-      margin-bottom: 24px
+      margin-bottom: 24px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .feats {
       display: flex;
       flex-direction: column;
-      gap: 12px
+      gap: 12px;
+      align-items: center;
+      text-align: left;
     }
 
     .feat {
       display: flex;
       align-items: center;
-      gap: 12px
+      gap: 12px;
+      width: max-content;
+      margin: 0 auto;
     }
 
     .fdot {
@@ -1647,118 +1641,117 @@
     </div>
   </div>
 
-  <!-- HORIZONTAL SCROLL -->
-  <div id="hs">
-    <div class="hs-sticky">
-      <div class="hs-track" id="htrack">
-
-        <!-- PANEL 1: Why -->
-        <div class="panel">
-          <div class="pi">
-            <div class="p1-grid">
-              <div>
-                <div class="p1-tag">Why Crossbits?</div>
-                <div class="p1-h">
-                  <span class="l1">One codebase.</span>
-                  <span class="l2">Three platforms.</span>
-                  <span class="l3">Zero compromise.</span>
+  <!-- SECTIONS -->
+  <div id="features">
+    <!-- PANEL 1: Why -->
+    <div class="v-panel">
+      <div class="pi">
+        <div class="p1-grid">
+          <div class="rv">
+            <div class="p1-tag">Why Crossbits?</div>
+            <div class="p1-h">
+              <span class="l1">One codebase.</span>
+              <span class="l2">Three platforms.</span>
+              <span class="l3">Zero compromise.</span>
+            </div>
+            <p class="p1-p">Stop copying components between projects. Crossbits gives you a single production-ready
+              component system that compiles Tailwind to native StyleSheet on iOS and Android, and real CSS on Web.
+            </p>
+          </div>
+          <div class="ph-wrap rv d1">
+            <div class="ph-glow"></div>
+            <div class="phone">
+              <div class="ph-notch"></div>
+              <div class="ph-screen">
+                <div
+                  style="font-size:9px;color:rgba(255,255,255,.2);font-weight:700;letter-spacing:1.5px;margin-bottom:2px">
+                  BUTTONS</div>
+                <div class="ph-btn" style="background:linear-gradient(135deg,#5533ff,#ff33aa);color:#fff">Get
+                  Started</div>
+                <div class="ph-btn"
+                  style="background:rgba(255,255,255,.06);color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.07)">
+                  Learn More</div>
+                <div class="ph-btn"
+                  style="background:rgba(255,68,68,.1);color:#ff7070;border:1px solid rgba(255,68,68,.18)">Delete
+                  Account</div>
+                <div style="height:6px"></div>
+                <div
+                  style="font-size:9px;color:rgba(255,255,255,.2);font-weight:700;letter-spacing:1.5px;margin-bottom:4px">
+                  SWITCHES</div>
+                <div class="ph-sw-row"><span class="ph-sw-l">Notifications</span>
+                  <div class="ph-sw on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></div>
                 </div>
-                <p class="p1-p">Stop copying components between projects. Crossbits gives you a single production-ready
-                  component system that compiles Tailwind to native StyleSheet on iOS and Android, and real CSS on Web.
-                </p>
-              </div>
-              <div class="ph-wrap">
-                <div class="ph-glow"></div>
-                <div class="phone">
-                  <div class="ph-notch"></div>
-                  <div class="ph-screen">
-                    <div
-                      style="font-size:9px;color:rgba(255,255,255,.2);font-weight:700;letter-spacing:1.5px;margin-bottom:2px">
-                      BUTTONS</div>
-                    <div class="ph-btn" style="background:linear-gradient(135deg,#5533ff,#ff33aa);color:#fff">Get
-                      Started</div>
-                    <div class="ph-btn"
-                      style="background:rgba(255,255,255,.06);color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.07)">
-                      Learn More</div>
-                    <div class="ph-btn"
-                      style="background:rgba(255,68,68,.1);color:#ff7070;border:1px solid rgba(255,68,68,.18)">Delete
-                      Account</div>
-                    <div style="height:6px"></div>
-                    <div
-                      style="font-size:9px;color:rgba(255,255,255,.2);font-weight:700;letter-spacing:1.5px;margin-bottom:4px">
-                      SWITCHES</div>
-                    <div class="ph-sw-row"><span class="ph-sw-l">Notifications</span>
-                      <div class="ph-sw on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></div>
-                    </div>
-                    <div class="ph-sw-row"><span class="ph-sw-l">Dark Mode</span>
-                      <div class="ph-sw on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></div>
-                    </div>
-                    <div class="ph-sw-row"><span class="ph-sw-l">Analytics</span>
-                      <div class="ph-sw off" onclick="this.classList.toggle('on');this.classList.toggle('off')"></div>
-                    </div>
-                    <div style="height:6px"></div>
-                    <div class="ph-card">
-                      <div class="ph-ct">Pro Plan</div>
-                      <div class="ph-cs">All 12 components</div>
-                      <div style="display:flex;gap:5px;margin-top:8px">
-                        <div class="ph-badge" style="background:rgba(85,51,255,.15);color:#a088ff">Active</div>
-                        <div class="ph-badge" style="background:rgba(51,255,170,.1);color:#33ffaa">v1.0</div>
-                      </div>
-                      <div class="ph-pt">
-                        <div class="ph-pf" style="background:linear-gradient(90deg,#5533ff,#ff33aa);width:78%"></div>
-                      </div>
-                    </div>
+                <div class="ph-sw-row"><span class="ph-sw-l">Dark Mode</span>
+                  <div class="ph-sw on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></div>
+                </div>
+                <div class="ph-sw-row"><span class="ph-sw-l">Analytics</span>
+                  <div class="ph-sw off" onclick="this.classList.toggle('on');this.classList.toggle('off')"></div>
+                </div>
+                <div style="height:6px"></div>
+                <div class="ph-card">
+                  <div class="ph-ct">Pro Plan</div>
+                  <div class="ph-cs">All 12 components</div>
+                  <div style="display:flex;gap:5px;margin-top:8px">
+                    <div class="ph-badge" style="background:rgba(85,51,255,.15);color:#a088ff">Active</div>
+                    <div class="ph-badge" style="background:rgba(51,255,170,.1);color:#33ffaa">v1.0</div>
+                  </div>
+                  <div class="ph-pt">
+                    <div class="ph-pf" style="background:linear-gradient(90deg,#5533ff,#ff33aa);width:78%"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
-        <!-- PANEL 2: Code -->
-        <div class="panel">
-          <div class="pi">
-            <div class="p2-grid">
-              <div>
-                <div class="p2-tag">How it works</div>
-                <div class="p2-h">Write once.<br />Runs native.</div>
-                <p class="p2-p">Tailwind <code
-                    style="font-family:var(--mono);font-size:12px;background:rgba(255,255,255,.06);padding:2px 8px;border-radius:5px;color:#a088ff">className</code>
-                  on React Native. NativeWind v4 compiles to <code
-                    style="font-family:var(--mono);font-size:12px;background:rgba(255,255,255,.06);padding:2px 8px;border-radius:5px;color:#33ffaa">StyleSheet</code>
-                  on native, CSS on web.</p>
-                <div class="feats">
-                  <div class="feat">
-                    <div class="fdot" style="background:#5533ff;box-shadow:0 0 8px rgba(85,51,255,.5)"></div><span
-                      class="ftxt">CVA variants — same pattern as shadcn/ui</span>
-                  </div>
-                  <div class="feat">
-                    <div class="fdot" style="background:#ff33aa;box-shadow:0 0 8px rgba(255,51,170,.5)"></div><span
-                      class="ftxt">rn-primitives for headless accessible base</span>
-                  </div>
-                  <div class="feat">
-                    <div class="fdot" style="background:#33ffaa;box-shadow:0 0 8px rgba(51,255,170,.5)"></div><span
-                      class="ftxt">forwardRef + full TypeScript throughout</span>
-                  </div>
-                  <div class="feat">
-                    <div class="fdot" style="background:#ffaa33;box-shadow:0 0 8px rgba(255,170,51,.5)"></div><span
-                      class="ftxt">CSS variable tokens for automatic dark mode</span>
-                  </div>
-                </div>
-              </div>
-              <div class="cwin">
-                <div class="cb">
-                  <div class="cds">
-                    <div class="cd r"></div>
-                    <div class="cd y"></div>
-                    <div class="cd g"></div>
-                  </div>
-                  <div class="cf">Button.tsx</div>
-                  <div class="cp" onclick="copyCode(this)">Copy</div>
-                </div>
-                <div class="cbody">
-                  <pre
-                    id="cpre"><span class="k">import</span> <span class="p">{</span> <span class="nm">Pressable</span> <span class="p">}</span> <span class="k">from</span> <span class="str">'react-native'</span><span class="p">;</span>
+  <!-- PANEL 2: Code -->
+  <div class="v-panel">
+    <div class="pi">
+      <div class="p2-grid">
+        <div class="rv">
+          <div class="p2-tag">How it works</div>
+          <div class="p2-h">Write once.<br />Runs native.</div>
+          <p class="p2-p">Tailwind <code
+              style="font-family:var(--mono);font-size:12px;background:rgba(255,255,255,.06);padding:2px 8px;border-radius:5px;color:#a088ff">className</code>
+            on React Native. NativeWind v4 compiles to <code
+              style="font-family:var(--mono);font-size:12px;background:rgba(255,255,255,.06);padding:2px 8px;border-radius:5px;color:#33ffaa">StyleSheet</code>
+            on native, CSS on web.</p>
+          <div class="feats">
+            <div class="feat">
+              <div class="fdot" style="background:#5533ff;box-shadow:0 0 8px rgba(85,51,255,.5)"></div><span
+                class="ftxt">CVA variants — same pattern as shadcn/ui</span>
+            </div>
+            <div class="feat">
+              <div class="fdot" style="background:#ff33aa;box-shadow:0 0 8px rgba(255,51,170,.5)"></div><span
+                class="ftxt">rn-primitives for headless accessible base</span>
+            </div>
+            <div class="feat">
+              <div class="fdot" style="background:#33ffaa;box-shadow:0 0 8px rgba(51,255,170,.5)"></div><span
+                class="ftxt">forwardRef + full TypeScript throughout</span>
+            </div>
+            <div class="feat">
+              <div class="fdot" style="background:#ffaa33;box-shadow:0 0 8px rgba(255,170,51,.5)"></div><span
+                class="ftxt">CSS variable tokens for automatic dark mode</span>
+            </div>
+          </div>
+        </div>
+        <div class="cwin rv d1">
+          <div class="cb">
+            <div class="cds">
+              <div class="cd r"></div>
+              <div class="cd y"></div>
+              <div class="cd g"></div>
+            </div>
+            <div class="cf">Button.tsx</div>
+            <div class="cp" onclick="copyCode(this)">Copy</div>
+          </div>
+          <div class="cbody">
+            <pre
+              id="cpre"><span class="k">import</span> <span class="p">{</span> <span class="nm">Pressable</span> <span class="p">}</span> <span class="k">from</span> <span class="str">'react-native'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nm">cva</span> <span class="p">}</span> <span class="k">from</span> <span class="str">'class-variance-authority'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nm">cn</span> <span class="p">}</span> <span class="k">from</span> <span class="str">'~/lib/utils'</span><span class="p">;</span>
 
@@ -1781,14 +1774,13 @@
 
 <span class="cm">// Works on iOS, Android & Web</span>
 <span class="p">&lt;</span><span class="fn">Button</span> <span class="nm">variant</span><span class="op">=</span><span class="str">"default"</span> <span class="nm">size</span><span class="op">=</span><span class="str">"lg"</span> <span class="nm">label</span><span class="op">=</span><span class="str">"Get Started"</span> <span class="p">/&gt;</span></pre>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-
       </div>
     </div>
+  </div>
+  </div>
+  </div>
   </div>
 
   <!-- STATS -->
@@ -2219,18 +2211,7 @@ void main(){
       btn.addEventListener('mouseleave', () => btn.style.transform = '');
     });
 
-    /* ══ HORIZONTAL SCROLL ══ */
-    const hsel = document.getElementById('hs'), track = document.getElementById('htrack');
-    const panels = track.querySelectorAll('.panel');
-    const totalScroll = (panels.length - 1) * window.innerWidth;
-    hsel.style.height = (totalScroll + window.innerHeight) + 'px';
-    function updHS() {
-      const rect = hsel.getBoundingClientRect();
-      const prog = Math.max(0, Math.min(1, -rect.top / totalScroll));
-      track.style.transform = `translateX(${-prog * (panels.length - 1) * 100}vw)`;
-    }
-    window.addEventListener('scroll', updHS, { passive: true });
-    window.addEventListener('resize', () => { hsel.style.height = ((panels.length - 1) * window.innerWidth + window.innerHeight) + 'px' });
+    /* HORIZONTAL SCROLL REMOVED */
 
     /* ══ SCROLL REVEAL ══ */
     const rvObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rvObs.unobserve(e.target) } }) }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
